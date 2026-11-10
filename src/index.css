@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+/* Makes navigation menu im single line at top of page. */
+#navbar {
+  display: flex;
+  gap: 1ch;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  margin-right: 2ch;
+  margin-left: 2ch;
+  border-bottom: 2px solid #ddd;
+  font-size: 1.25ch;
+  text-decoration: none;
+
+  /* Removes underline from menu names*/
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+  }
+}
+
+/* Changes size of the main logo on homepage */
+#logo {
+  width: 70%;
+  height: 70%;
+}
+
+/* Changes size of the upper-left small navlogo on homepage */
+#logosmall {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Flex all home page content to center align them */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles Register Button on home page */
+#signup {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5em;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 0.25ch;
+}
