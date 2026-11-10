@@ -1,5 +1,5 @@
 {
-  "name": "foobar",
+  "name": "blockflix",
   "type": "module",
   "scripts": {
     "dev": "vite",
