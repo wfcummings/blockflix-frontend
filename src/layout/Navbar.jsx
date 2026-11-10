@@ -7,7 +7,11 @@ export default function Navbar() {
   return (
     <header id="navbar">
       <NavLink id="brand" to="/">
-        <p>BlockFlix</p>
+        <img
+          id="logosmall"
+          src="src/logo/bflogo.png"
+          alt="Logo for BlockFlix"
+        ></img>
       </NavLink>
       <nav>
         {token ? (

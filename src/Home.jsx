@@ -3,7 +3,12 @@ import { NavLink } from "react-router";
 export default function Home() {
   return (
     <>
-      <NavLink to="/register">Register</NavLink>
+      <div id="home">
+        <img id="logo" src="src/logo/bflogo.png" alt="Logo for BlockFlix"></img>
+        <NavLink id="signup" to="/register">
+          Sign Up/Register
+        </NavLink>
+      </div>
     </>
   );
 }
