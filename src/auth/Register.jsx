@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
+import "./Register.css";
 
 import { useAuth } from "./AuthContext";
 
@@ -22,7 +23,7 @@ export default function Register() {
   };
 
   return (
-    <>
+    <div className="register-page">
       <h1>Register for an account</h1>
       <form action={onRegister}>
         <label>
@@ -37,6 +38,6 @@ export default function Register() {
         {error && <output>{error}</output>}
       </form>
       <Link to="/login">Already have an account? Log in here.</Link>
-    </>
+    </div>
   );
 }
