@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 
-// Load the register page styles 
+// Load the register page styles
 import "./Register.css";
 
 import { useAuth } from "./AuthContext";
@@ -21,16 +21,15 @@ export default function Register() {
     const password = formData.get("password");
     try {
       await register({ username, password });
-      navigate("/");
+      navigate("/movies");
     } catch (e) {
       setError(e.message);
     }
   };
 
- // Display the register page with a cinema background 
+  // Display the register page with a cinema background
   return (
     <div className="register-background">
-
       {/* Registeration card  */}
       <div className="register-page">
         <h1>Register for an account</h1>
@@ -40,7 +39,6 @@ export default function Register() {
             <input type="text" name="username" />
           </label>
 
-
           {/*  Password  field with a show/hide button   */}
           <label htmlFor="password">Password</label>
           <div className="password-field">
@@ -48,12 +46,14 @@ export default function Register() {
               id="password"
               type={showPassword ? "text" : "password"}
               name="password"
-              required/>
+              required
+            />
             <button
               type="button"
               className="password-toggle"
               aria-label={showPassword ? "Hide password" : "Show password"}
-              onClick={() => setShowPassword((previous) => !previous)}>
+              onClick={() => setShowPassword((previous) => !previous)}
+            >
               <span aria-hidden="true">👁</span>
             </button>
           </div>
