@@ -1,33 +1,47 @@
+ /* Styles  and centers the registration card */
 .register-page {
     max-width :25rem;
     margin: 2.5rem auto;
     padding: 1.5rem;
     font-family:Arial, sans-serif;
     color:#163b65;
+    background-color:white;
+    border-radius: 1rem;
+    box-shadow:0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
 }
+ /*Styles the page title */
+.register-page h1{
+    font-size : 1.75rem;
+    font-weight: 700;
+    color:#163b65;
+    text-align:center;
+    margin-bottom: 1.5rem;
+}
+ /*Arranges form elements vertically with spacing */
 .register-page form{
     display: flex;
     flex-direction: column;
     gap:1rem;
 }
-
+ /* {;aces ;abe; text above its input */
 .register-page label {
     display: flex;
     flex-direction: column;
     gap:0.5rem;
 }
-
+ /* styles the input fields */
 .register-page input{
     padding:0.75rem;
     font-size: 1rem;
     border:0.0255rem solid #aaa;
     border-radius:0.5rem;
 }
+ /* Highlights the active input field */
 .register-page input:focus{
     outline: 0.125rem solid #163b65;
     outline-offset:0.125rem; ;
 }
-
+ /* Styles the form buttons */
 .register-page button {
     padding :0.57rem;
     font-size : 1rem;
@@ -37,13 +51,51 @@
     color:white;
     border:none;
 }
+/* Derkens the button on hover*/
     .register-page button:hover{
     background-color: #102c4c;
     }
 
+ /* Centers the login link and removes its underline */
 .register-page > a {
     display: block;
     margin-top: 1rem;
     text-align:center;
     text-decoration: none;
+}
+ /* Add the cinema background to the register page */
+.register-background {
+    min-height:100vh ;
+    background-image:url("/Cinema.PNG") ;
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding:2rem 1rem;
+}
+
+/*  Positions the password toggle inside the input */
+.password-field {
+  position: relative;
+}
+
+ /* Makes the input full width and leaves room for the eye*/
+.password-field input {
+  width: 100%;
+  padding-right: 3rem;
+}
+ /* Place the eye on the right inside the password field */
+.register-page .password-toggle {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 0.25rem;
+  color: #163b65;
+  font-size: 0.9rem;
+}
+ /* keep the eye button background transparent on hover*/
+.register-page .password-toggle:hover {
+  background: transparent;
 }
