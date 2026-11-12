@@ -4,6 +4,7 @@ import { useAuth } from "../auth/AuthContext";
 
 export default function Navbar() {
   const { token, logout } = useAuth();
+
   return (
     <header id="navbar">
       {token ? (
@@ -28,7 +29,9 @@ export default function Navbar() {
         {token ? (
           <>
             <NavLink to="/movies">movies</NavLink>
-            <button onClick={logout}>Log out</button>
+            <NavLink to="/" onClick={() => logout()}>
+              Log out
+            </NavLink>
           </>
         ) : (
           <>
