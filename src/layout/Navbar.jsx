@@ -28,7 +28,7 @@ export default function Navbar() {
         {token ? (
           <>
             <NavLink to="/movies">movies</NavLink>
-            <button onClick={logout}>Log out</button>
+            <button onClick={() => logout()}>Log out</button>
           </>
         ) : (
           <>
