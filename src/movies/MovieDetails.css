@@ -33,10 +33,26 @@
     border-radius : 0.5rem;
     text-decoration: none;
 }
+/* Style the reserve button */ 
+.movie-details button {
+    padding : 0.75rem 1.25rem;
+    margin-right : 1rem;
+    background-color : #19285a;
+    color : white ;
+    border : none;
+    border-radius : 0.5rem;
+    font : inherit;
+    cursor:pointer;
 
-/* Highlight the link on hover and keyboard focus */
+}
+
+/* Highlight the link  and button on hover and keyboard focus */
 
 .movie-details a:hover,
-.movie-details a:focus-visible{
+.movie-details a:focus-visible,
+.movie-details button:hover,
+.movie-details button:focus-visible
+
+{
     background-color : #304680;
 }
