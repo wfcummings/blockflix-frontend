@@ -19,10 +19,16 @@
 
 /* Styles Register Button on home page */
 #signup {
+  padding: 0.57rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #163b65;
+  color: white;
+  border: none;
   text-decoration: none;
-  color: black;
-  font-size: 1.5em;
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 0.25ch;
+}
+/* Darkens the button on hover*/
+#signup:hover {
+  background-color: #102c4c;
 }
