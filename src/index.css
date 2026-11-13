@@ -23,7 +23,11 @@
   /* Removes underline from menu names*/
   a {
     text-decoration: none;
-    color: black;
-    font-size: 2em;
+    color: #163b65;
+    font-size: 1.5em;
+    padding: 0ch;
   }
+}
+
+#login {
 }
