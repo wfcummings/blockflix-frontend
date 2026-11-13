@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
  import { useAuth } from "../auth/AuthContext";
  // Import  the movie request 
  import { getMovieById } from "../api/movies";
+ // Import the reservation request
+ import { createReservation } from "../api/reservations";
  // Import movie details styles 
  import "./MovieDetails.css";
 
@@ -23,6 +25,9 @@ export default function MovieDetails() {
 
  // Store loading errors 
  const [ error, setError] = useState("");
+
+ // Store the reservation message 
+ const [reservationMessage, setReservationMessage] = useState("");
 
 // Load the selected movie 
 useEffect( () => {
@@ -45,6 +50,20 @@ useEffect( () => {
     loadMovie();
 }, [id, token]);
 
+// Handle the reserve button click 
+    async function  handleReserve(){
+        //Clear the previous reservation message 
+        setReservationMessage("");
+        try{
+            // Reserve the selected movie 
+            await createReservation(id, token);
+            // Show a success message 
+            setReservationMessage("Movie reserved successfully!");
+        } catch (error) {
+             //Show the error message  
+             setReservationMessage(error.message);   
+        }
+    }
 
 // Ask the user to log in 
 if(!token){
@@ -74,6 +93,12 @@ if(error){
     <h1> {movie.title}</h1>
     <p>Year: {movie.year}</p>
     <p>Rating: {movie.rating}</p>
+     {/** Reserve the selected movie  */}
+     <button type= "button" onClick={handleReserve}>Reserve</button>
+
+     {/** Show the reservation message */}
+     {reservationMessage && <p>{reservationMessage}</p>}
+
     {/** Return to the movie list  */}
     <Link to = "/movies"> Back to movies</Link>
   </section>
