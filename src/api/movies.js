@@ -35,3 +35,23 @@ export async function getMovies(token) {
     return [];
   }
 }
+
+
+//  Fetch one movie by ID 
+export async  function  getMovieById (id, token) {
+ try {
+  const response = await fetch(API + "/movies/" + id, {
+    // Send the token 
+   headers : { 
+    Authorization : "Bearer " + token },
+   });
+  if (!response.ok) {
+    throw Error ("Could not load movie.")
+  }
+  const result = await  response.json();
+  return result;
+} catch (e) {
+    console.error(e)
+    return null;
+}
+}
