@@ -19,22 +19,28 @@ export default function MovieDetails() {
  // Store movie data 
  const [movie , setMovie] = useState(null) ;
 
- // store loading errors 
- const [ error, setError] = useState("")
+ // Store loading errors 
+ const [ error, setError] = useState("");
 
-// load the selected movie 
+// Load the selected movie 
 useEffect( () => {
     if(! token ) return; 
     async function loadMovie(){
-        const data = await getMovieById(id, token);
+       
+        // Reset the previous movie and error 
+        setError("");
+        setMovie(null);
+
+        // Fetch the selected movie 
+         const data = await getMovieById(id, token);
         setMovie(data);
 
         // Handle missing movie data 
         if (!data) {
-            setError("Could not load movie.")
+            setError("Could not load movie.");
         }
     }
-    loadMovie()
+    loadMovie();
 }, [id, token]);
 
 
@@ -57,10 +63,10 @@ if(error){
 }
  // Wait for movie data 
  if(!movie){
-    return <p> Loading...</p>
+    return <p> Loading...</p>;
 
  }
- //Shoe movie details
+ //Show movie details
   return (
   <section >
     <h1> {movie.title}</h1>
