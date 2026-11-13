@@ -6,6 +6,8 @@ import Home from "./Home";
 import MoviesPage from "./movies/MoviesPage";
 import Error404 from "./Error404";
 import Account from "./account/Account";
+// Import movies details 
+import MovieDetails from "./movies/MovieDetails";
 
 export default function App() {
   return (
@@ -13,6 +15,8 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="/movies" element={<MoviesPage />} />
+        {/** show details for the selected movie */}
+        <Route path = "/movies/:id" element = {<MovieDetails />} />
         <Route path="/account" element={<Account />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
