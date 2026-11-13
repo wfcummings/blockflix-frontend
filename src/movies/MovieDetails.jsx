@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
  import { useAuth } from "../auth/AuthContext";
  // Import  the movie request 
  import { getMovieById } from "../api/movies";
+ // Import movie details styles 
+ import "./MovieDetails.css";
 
 // Display the movie details page
 export default function MovieDetails() {
@@ -68,7 +70,7 @@ if(error){
  }
  //Show movie details
   return (
-  <section >
+  <section  className="movie-details">
     <h1> {movie.title}</h1>
     <p>Year: {movie.year}</p>
     <p>Rating: {movie.rating}</p>
