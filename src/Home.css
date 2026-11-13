@@ -1,0 +1,34 @@
+/* Changes size of the main logo on homepage */
+#logo {
+  width: 70%;
+  height: 70%;
+}
+
+/* Changes size of the upper-left small navlogo on homepage */
+#logosmall {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Flex all home page content to center align them */
+#home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Styles Register Button on home page */
+#signup {
+  padding: 0.57rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #163b65;
+  color: white;
+  border: none;
+  text-decoration: none;
+}
+/* Darkens the button on hover*/
+#signup:hover {
+  background-color: #102c4c;
+}
