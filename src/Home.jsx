@@ -7,7 +7,7 @@ export default function Home() {
       <div id="home">
         <img id="logo" src="src/logo/bflogo.png" alt="Logo for BlockFlix"></img>
         <NavLink id="signup" to="/register">
-          Sign Up/Register
+          Sign Up
         </NavLink>
       </div>
     </>
