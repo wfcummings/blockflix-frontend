@@ -29,5 +29,7 @@
   }
 }
 
-#login {
+#navbarlinks {
+  display: flex;
+  gap: 1ch;
 }

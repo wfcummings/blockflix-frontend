@@ -3,6 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 import MovieList from "./MovieList";
 import { getMovies } from "../api/movies";
 import { Link } from "react-router";
+import "./MoviesPage.css";
 
 export default function MoviesPage() {
   const { token } = useAuth();
@@ -25,8 +26,12 @@ export default function MoviesPage() {
 
   return (
     <>
-      {token && <h1>Available Movies</h1>}
-      {token && <MovieList movies={movies} syncMovies={syncMovies} />}
+      {token && (
+        <div className="movies-background">
+          <h1 id="moviespagetitle">Available Movies</h1>
+          <MovieList movies={movies} syncMovies={syncMovies} />
+        </div>
+      )}
     </>
   );
 }
