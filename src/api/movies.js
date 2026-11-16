@@ -59,12 +59,12 @@ export async function getMovieById(id, token) {
 // Gets a list of all the users reservations
 export async function getReservations(token) {
   try {
-    const response = await fetch (API + "/reservations", {
+    const response = await fetch(API + "/reservations", {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
-    if(!response.ok) throw Error ("Reservations not found.");
+    if (!response.ok) throw Error("Reservations not found.");
     const result = await response.json();
     return result;
   } catch (e) {
@@ -73,15 +73,15 @@ export async function getReservations(token) {
   }
 }
 
-// Get a specific reservation based off the user and movie 
+// Get a specific reservation based off the user and movie
 export async function getReservation(token, movieId) {
   try {
-    const response = await fetch (API + `/reservations/${movieId}`, {
+    const response = await fetch(API + `/reservations/${movieId}`, {
       headers: {
         Authorization: "Bearer " + token,
       },
     });
-    if(!response.ok) throw Error ("Reservation not found.");
+    if (!response.ok) throw Error("Reservation not found.");
     const result = await response.json();
     return result;
   } catch (e) {
@@ -95,8 +95,8 @@ export async function watchMovie(token, id) {
   const response = await fetch(API + "/history", {
     method: "POST",
     headers: {
-      "Content-Type": "application/json", 
-      Authorization: "Bearer " + token 
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + token,
     },
     body: JSON.stringify({ reservation_id: id }),
   });

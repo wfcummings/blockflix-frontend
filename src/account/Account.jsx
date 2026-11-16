@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../auth/AuthContext";
 import { getAccount } from "../api/movies";
+import Reservations from "./Reservations";
 import { Link } from "react-router";
 
 export default function Account() {
@@ -33,6 +34,7 @@ export default function Account() {
       </header>
       <section>
         <h3>Your reservations:</h3>
+        <Reservations />
       </section>
     </>
   );
