@@ -30,6 +30,7 @@ export default function Account() {
   return (
     <>
       <section>
+        <Link to ="/watch-history">View Watch History</Link>
         <Reservations />
       </section>
     </>

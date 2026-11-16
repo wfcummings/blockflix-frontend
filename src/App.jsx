@@ -9,6 +9,8 @@ import Account from "./account/Account";
 // Import movies details 
 import MovieDetails from "./movies/MovieDetails";
 import Reservations from "./account/Reservations";
+// Import watchistory 
+import WatchHistory from "./account/WatchHistory";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
         <Route path = "/movies/:id" element = {<MovieDetails />} />
         <Route path="/reservations" element={<Reservations />} />
         <Route path="/account" element={<Account />} />
+        {/**Show the watch History page  */}
+        <Route path = "/watch-history" element={<WatchHistory />}/>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<Error404 />} />
