@@ -101,8 +101,10 @@ export async function watchMovie(token, id) {
     body: JSON.stringify({ reservation_id: id }),
   });
 
+  const result = await response.json();
+
   if (!response.ok) {
-    const result = await response.json();
     throw Error(result.message);
   }
+  return result;
 }
