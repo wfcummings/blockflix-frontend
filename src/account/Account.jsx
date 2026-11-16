@@ -29,11 +29,7 @@ export default function Account() {
 
   return (
     <>
-      <header className="account">
-        <h1>Welcome, {account.username}!</h1>
-      </header>
       <section>
-        <h3>Your reservations:</h3>
         <Reservations />
       </section>
     </>
