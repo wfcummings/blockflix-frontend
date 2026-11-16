@@ -8,12 +8,13 @@ export default function WatchHistory (){
     const { token } = useAuth()
 
     // Store the movies returned by the watch history
+    const [watchedMovees, setWatchedMovies] = useState(null);
 
     useEffect (()=> {
         async function loadHistory() {
             try {
                 const movies = await getWatchHistory(token);
-                console.log("Watch history:", movies);
+                setWatchedMovies(movies);
                 } catch (error) {
                     console.error(error);
                 }
@@ -23,5 +24,15 @@ export default function WatchHistory (){
             }
         }, [token]);
     
-    return <h1>Watch History</h1>
+    return (
+    <section>
+        <h1>Watch History</h1>
+        {watchedMovees?.length === 0 && <p> No watched movies yet. </p>}
+        <ul>
+            {watchedMovees?.map( (movie, index)=>{
+                <li key={index}>{movie.title}</li>
+            })}
+        </ul>
+        </section>
+    );
 }
