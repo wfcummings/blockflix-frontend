@@ -56,3 +56,9 @@
 {
     background-color : #304680;
 }
+
+button:disabled {
+    background-color : gray;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
