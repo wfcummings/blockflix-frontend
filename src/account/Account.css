@@ -1,0 +1,61 @@
+#account-background {
+  min-height: 100vh;
+  background-image: url("/Cinema.PNG");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
+}
+
+#accountsection {
+  max-width: 25rem;
+  margin: 2.5rem auto;
+  padding: 1.5rem;
+  font-family: Arial, sans-serif;
+  color: #163b65;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1ch;
+}
+
+#reservations {
+  display: flex;
+
+  list-style-type: none;
+  align-items: center;
+  gap: 1ch;
+}
+
+#movieposter2 {
+  width: 50%;
+  height: 50%;
+  border: 1.5px solid #163b65;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+  margin-bottom: 1ch;
+  margin-top: 1ch;
+}
+
+#watchbutton {
+  width: 50%;
+  padding: 0.25rem;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #163b65;
+  color: white;
+  border: none;
+  margin-bottom: 1ch;
+  margin-top: 0ch;
+}
+
+h2 {
+  text-align: center;
+}
+
+#numofreserve {
+  text-align: center;
+}

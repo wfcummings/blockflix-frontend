@@ -29,9 +29,9 @@ export default function Account() {
 
   return (
     <>
-      <section>
+      <div>
         <Reservations />
-      </section>
+      </div>
     </>
   );
 }
