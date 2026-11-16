@@ -8,9 +8,8 @@ import {
 } from "../api/movies";
 import { Link } from "react-router";
 
-
 export default function Reservations() {
-    // set up state and token variables
+  // set up state and token variables
   const [reservations, setReservations] = useState([]);
   const [name, setName] = useState();
   const { token } = useAuth();
@@ -21,7 +20,7 @@ export default function Reservations() {
       const userData = await getAccount(token);
       const resData = await getReservations(token);
       setName(userData.username);
-      setReservations(resData.reservations);
+      setReservations(resData);
     };
     syncReservations();
   }, [token]);
@@ -34,7 +33,7 @@ export default function Reservations() {
     );
   }
 
-  if (!name) return <p>Loading...</p>;
+  if (!name || !reservations) return <p>Loading...</p>;
 
   return (
     <>
