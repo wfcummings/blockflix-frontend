@@ -8,6 +8,7 @@ import Error404 from "./Error404";
 import Account from "./account/Account";
 // Import movies details 
 import MovieDetails from "./movies/MovieDetails";
+import Reservations from "./account/Reservations";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/movies" element={<MoviesPage />} />
         {/** show details for the selected movie */}
         <Route path = "/movies/:id" element = {<MovieDetails />} />
+        <Route path="/reservations" element={<Reservations />} />
         <Route path="/account" element={<Account />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
