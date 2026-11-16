@@ -43,31 +43,19 @@ export default function Reservations() {
           <header>
             <h1>Welcome, {name}!</h1>
             <p id="numofreserve">
-              You have reserved {reservations.length} movies
+              You have reserved {reservedMovies.length} movies
             </p>
           </header>
           <section>
             <h2>Your reserved movies:</h2>
             <ul>
-              {reservations.map((movie) => (
+              {reservedMovies.map((movie) => (
                 <ReservedMovie key={movie.id} movie={movie} token={token} />
               ))}
             </ul>
           </section>
         </div>
       </div>
-      <header>
-        <h1>Welcome {name}</h1>
-        <p>You have reserved {reservedMovies.length} movies</p>
-      </header>
-      <section>
-        <h2>Your reservations</h2>
-        <ul id="reservations">
-          {reservedMovies.map((movie) => (
-            <ReservedMovie key={movie.id} movie={movie} token={token} />
-          ))}
-        </ul>
-      </section>
     </>
   );
 }
