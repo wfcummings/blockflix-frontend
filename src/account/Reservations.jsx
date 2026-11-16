@@ -10,7 +10,7 @@ import { Link } from "react-router";
 
 export default function Reservations() {
   // set up state and token variables
-  const [reservations, setReservations] = useState([]);
+  const [reservedMovies, setreservedMovies] = useState([]);
   const [name, setName] = useState();
   const { token } = useAuth();
 
@@ -20,7 +20,7 @@ export default function Reservations() {
       const userData = await getAccount(token);
       const resData = await getReservations(token);
       setName(userData.username);
-      setReservations(resData);
+      setreservedMovies(resData);
     };
     syncReservations();
   }, [token]);
@@ -33,18 +33,18 @@ export default function Reservations() {
     );
   }
 
-  if (!name || !reservations) return <p>Loading...</p>;
+  if (!name || !reservedMovies) return <p>Loading...</p>;
 
   return (
     <>
       <header>
         <h1>Welcome {name}</h1>
-        <p>You have reserved {reservations.length} movies</p>
+        <p>You have reserved {reservedMovies.length} movies</p>
       </header>
       <section>
         <h2>Your reservations</h2>
         <ul id="reservations">
-          {reservations.map((movie) => (
+          {reservedMovies.map((movie) => (
             <ReservedMovie key={movie.id} movie={movie} token={token} />
           ))}
         </ul>
@@ -57,6 +57,7 @@ export default function Reservations() {
 function ReservedMovie({ movie, token }) {
   const [error, setError] = useState(null);
 
+  // try to add to the watch history table
   const tryWatch = async () => {
     try {
       const res = await getReservation(token, movie.id);
