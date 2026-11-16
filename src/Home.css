@@ -15,6 +15,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  background-image: url("/Cinema.PNG");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
 }
 
 /* Styles Register Button on home page */
@@ -31,4 +37,13 @@
 /* Darkens the button on hover*/
 #signup:hover {
   background-color: #102c4c;
+}
+
+#home-background {
+  min-height: 100vh;
+  background-image: url("/Cinema.PNG");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 2rem 1rem;
 }
