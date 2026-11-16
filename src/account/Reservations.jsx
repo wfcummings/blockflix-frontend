@@ -58,8 +58,6 @@ export default function Reservations() {
 function ReservedMovie({ movie, token }) {
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
-
   const tryWatch = async () => {
     try {
       const res = await getReservation(token, movie.id);
