@@ -22,3 +22,16 @@ if (!response.ok) {
 return await response.json();
 
 }
+
+// Get the user's reservations 
+export async function getReservations(token){
+    const response = await fetch(`${API}/reservations`, {
+        headers :{Authorization: `Bearer ${token}`,
+        },
+    
+    });
+    if (!response.ok) {
+        throw new Error("Faled to load reservation");
+    }
+    return await response.json();
+}

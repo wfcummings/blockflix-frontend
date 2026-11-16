@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
  // Import  the movie request 
  import { getMovieById } from "../api/movies";
  // Import the reservation request
- import { createReservation } from "../api/reservations";
+ import { createReservation , getReservations} from "../api/reservations";
  // Import movie details styles 
  import "./MovieDetails.css";
 
@@ -29,6 +29,9 @@ export default function MovieDetails() {
  // Store the reservation message 
  const [reservationMessage, setReservationMessage] = useState("");
 
+ // Track whether the movie was reserved 
+ const [isReserved, setIsReserved] = useState(false);
+
 // Load the selected movie 
 useEffect( () => {
     if(! token ) return; 
@@ -41,6 +44,15 @@ useEffect( () => {
         // Fetch the selected movie 
          const data = await getMovieById(id, token);
         setMovie(data);
+
+        // Chick if this movie is already reserved
+        const reservations= await getReservations(token);
+        console.log("Reservations:", reservations);
+        const alreadyReserved = reservations.some(
+            (reservation) => Number(reservation.movie_id) === Number(id)
+        );
+        setIsReserved(alreadyReserved)
+        
 
         // Handle missing movie data 
         if (!data) {
@@ -57,6 +69,9 @@ useEffect( () => {
         try{
             // Reserve the selected movie 
             await createReservation(id, token);
+            // Mark the movie as reserved 
+            setIsReserved(true);
+
             // Show a success message 
             setReservationMessage("Movie reserved successfully!");
         } catch (error) {
@@ -94,7 +109,12 @@ if(error){
     <p>Year: {movie.year}</p>
     <p>Rating: {movie.rating}</p>
      {/** Reserve the selected movie  */}
-     <button type= "button" onClick={handleReserve}>Reserve</button>
+     <button type= "button" 
+     onClick={handleReserve}
+     disabled = {isReserved}
+     >
+        {isReserved ? "Reserved"  :  "Reserve" }
+        </button>
 
      {/** Show the reservation message */}
      {reservationMessage && <p>{reservationMessage}</p>}
