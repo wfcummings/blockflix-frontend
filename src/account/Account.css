@@ -40,7 +40,7 @@
 }
 
 #watchbutton {
-  width: 50%;
+  width: 100%;
   padding: 0.25rem;
 
   border-radius: 0.5rem;
@@ -52,6 +52,23 @@
   margin-top: 0ch;
 }
 
+#deletebutton {
+  width: 100%;
+  padding: 0.25rem;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #163b65;
+  color: white;
+  border: none;
+  margin-bottom: 1ch;
+  margin-top: 0ch;
+}
+
+#buttondiv {
+  display: flex;
+  flex-direction: column;
+}
 h2 {
   text-align: center;
 }
