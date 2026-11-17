@@ -29,8 +29,8 @@ export default function Account() {
 
   return (
     <>
-      <div>
-        <Link to ="/watch-history">View Watch History</Link>
+      <div className="watch-history-bar">
+        <Link className="watch-history-link" to ="/watch-history">View Watch History</Link>
         <Reservations />
       </div>
     </>
