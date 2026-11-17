@@ -6,6 +6,8 @@ import {
   getReservations,
   watchMovie,
 } from "../api/movies";
+
+import { deleteReservation } from "../api/reservations";
 import { Link } from "react-router";
 import "./Account.css";
 
@@ -16,14 +18,14 @@ export default function Reservations() {
   const { token } = useAuth();
 
   // get the users reservations
+  const syncReservations = async (token) => {
+    const userData = await getAccount(token);
+    const resData = await getReservations(token);
+    setName(userData.username);
+    setreservedMovies(resData);
+  };
   useEffect(() => {
-    const syncReservations = async () => {
-      const userData = await getAccount(token);
-      const resData = await getReservations(token);
-      setName(userData.username);
-      setreservedMovies(resData);
-    };
-    syncReservations();
+    syncReservations(token);
   }, [token]);
 
   if (!token) {
@@ -50,7 +52,12 @@ export default function Reservations() {
             <h2>Your reserved movies:</h2>
             <ul>
               {reservedMovies.map((movie) => (
-                <ReservedMovie key={movie.id} movie={movie} token={token} />
+                <ReservedMovie
+                  key={movie.id}
+                  movie={movie}
+                  token={token}
+                  syncReservations={syncReservations}
+                />
               ))}
             </ul>
           </section>
@@ -61,7 +68,7 @@ export default function Reservations() {
 }
 
 // display the movie in a list item
-function ReservedMovie({ movie, token }) {
+function ReservedMovie({ movie, token, syncReservations }) {
   const [error, setError] = useState(null);
 
   // try to add to the watch history table
@@ -74,6 +81,15 @@ function ReservedMovie({ movie, token }) {
     }
   };
 
+  const returnMovie = async () => {
+    try {
+      await deleteReservation(token, movie.id);
+      syncReservations(token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <li id="reservations">
       <img
@@ -82,10 +98,15 @@ function ReservedMovie({ movie, token }) {
         alt={"Cover image of " + movie.title}
       />
       {movie.title}{" "}
-      <button id="watchbutton" onClick={tryWatch}>
-        Watch
-      </button>
-      {error && <p role="alert">{error}</p>}
+      <div id="buttondiv">
+        <button id="watchbutton" onClick={tryWatch}>
+          Watch
+        </button>
+        <button id="deletebutton" onClick={returnMovie}>
+          Delete
+        </button>
+        {error && <p role="alert">{error}</p>}
+      </div>
     </li>
   );
 }
