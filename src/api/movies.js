@@ -98,7 +98,7 @@ export async function watchMovie(token, id) {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token,
     },
-    body: JSON.stringify({ reservation_id: id }),
+    body: JSON.stringify({ reservationId: id }),
   });
 
   const result = await response.json();
