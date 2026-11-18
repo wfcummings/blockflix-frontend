@@ -3,6 +3,7 @@ import { useAuth } from "../auth/AuthContext";
 import { getAccount } from "../api/movies";
 import Reservations from "./Reservations";
 import { Link } from "react-router";
+import "../buttons.css";
 
 export default function Account() {
   const { token } = useAuth();
@@ -30,7 +31,7 @@ export default function Account() {
   return (
     <>
       <div className="watch-history-bar">
-        <Link className="watch-history-link" to ="/watch-history">View Watch History</Link>
+        <Link className="watch-history-link  button-base" to ="/watch-history">View Watch History</Link>
         <Reservations />
       </div>
     </>

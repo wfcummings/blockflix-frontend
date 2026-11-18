@@ -1,21 +1,17 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-
-// Load the register page styles
-import "./Register.css";
-
 import { useAuth } from "./AuthContext";
+import "./Register.css";
+import "../buttons.css";
 
 /** A form that allows users to register for a new account */
 export default function Register() {
   const { register } = useAuth();
   const navigate = useNavigate();
-
   const [error, setError] = useState(null);
 
   // controls whether the password is visible
   const [showPassword, setShowPassword] = useState(false);
-
   const onRegister = async (formData) => {
     const username = formData.get("username");
     const password = formData.get("password");
@@ -58,7 +54,9 @@ export default function Register() {
             </button>
           </div>
 
-          <button>Register</button>
+          <button type="submit" className="button-base">
+            Register
+          </button>
           {error && <output>{error}</output>}
         </form>
         <Link to="/login">Already have an account? Log in here.</Link>
