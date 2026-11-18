@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../auth/AuthContext";
 import {
   getAccount,
-  getReservation,
   getReservations,
   watchMovie,
 } from "../api/movies";
