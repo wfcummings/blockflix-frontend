@@ -1,4 +1,3 @@
-// Get the backend URL
 const API = import.meta.env.VITE_API;
 
 // Create a reservation
@@ -15,7 +14,7 @@ export async function createReservation(movieId, token) {
 
   // Check if the reservation failed
   if (!response.ok) {
-    throw new Error(`Failed to reserve the movie. : ${response.status}`);
+    throw new Error(`Failed to reserve the movie.(HTTP ${response.status}.`);
   }
   // Return the new reservation
   return await response.json();
@@ -27,9 +26,21 @@ export async function getReservations(token) {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) {
-    throw new Error("Faled to load reservation");
+    throw new Error("Failed to load reservations");
   }
   return await response.json();
+}
+
+// Return the user's active reservation for this movie,  or null.
+export async function getReservationsForMovie(movieId, token) {
+  const response = await fetch(`${API}/reservations/${movieId}`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  if (!response.ok) {
+    throw new Error("Could not check the reservation.");
+  }
+  const body = await response.text();
+  return body.trim() ? JSON.parse(body) : null;
 }
 
 /** Sends a request to delete a reservation for a movie with the id*/
