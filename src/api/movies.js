@@ -59,7 +59,7 @@ export async function getMovieById(id, token) {
 // Gets a list of all the users reservations
 export async function getReservations(token) {
   try {
-    const response = await fetch(API + "/reservations", {
+    const response = await fetch(API + "/movies/reservations", {
       headers: {
         Authorization: "Bearer " + token,
       },
