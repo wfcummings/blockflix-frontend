@@ -56,13 +56,9 @@
   text-align: center;
   text-decoration: none;
 }
-/* Add the cinema background to the register page */
+
 .register-background {
   min-height: 100vh;
-  background-image: url("/Cinema.PNG");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 2rem 1rem;
 }
 

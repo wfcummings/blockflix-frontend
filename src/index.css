@@ -5,6 +5,14 @@
   font-family: sans-serif;
   font-weight: 400;
 }
+body {
+  min-height: 100vh;
+  background-image : url("/Cinema.PNG");
+  background-position : center;
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+}
 
 /* Makes navigation menu im single line at top of page. */
 #navbar {
