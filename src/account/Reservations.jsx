@@ -74,8 +74,8 @@ function ReservedMovie({ movie, token, syncReservations }) {
   // try to add to the watch history table
   const tryWatch = async () => {
     try {
-      const res = await getReservation(token, movie.id);
-      await watchMovie(token, res.id);
+      /** Change the is_watched property in the reservations table */
+      await watchMovie(token, movie.id);
     } catch (e) {
       setError(e.message);
     }

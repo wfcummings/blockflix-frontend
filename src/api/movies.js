@@ -92,13 +92,16 @@ export async function getReservation(token, movieId) {
 
 // Send a post request to add a specific movie to the watch history table
 export async function watchMovie(token, id) {
-  const response = await fetch(API + "/history", {
-    method: "POST",
+  const response = await fetch(API + "/reservations", {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
       Authorization: "Bearer " + token,
     },
-    body: JSON.stringify({ reservationId: id }),
+    body: JSON.stringify({
+      movieId: id,
+      watched: true,
+    }),
   });
 
   const result = await response.json();
