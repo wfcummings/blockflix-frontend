@@ -45,14 +45,14 @@ li.movie figure {
   height: 6lh;
 }
 
-#movietitle {
+#movie-title {
   text-decoration: none;
   color: #163b65;
 
   border-radius: 6px;
   font-size: smaller;
 }
-#movietitle:hover {
+#movie-title:hover {
   color: rgb(227, 195, 88);
 }
 
