@@ -75,6 +75,7 @@ function ReservedMovie({ movie, token, syncReservations }) {
     try {
       /** Change the is_watched property in the reservations table */
       await watchMovie(token, movie.id);
+      syncReservations(token);
     } catch (e) {
       setError(e.message);
     }
@@ -89,6 +90,9 @@ function ReservedMovie({ movie, token, syncReservations }) {
     }
   };
 
+  /** get the movies reservation */
+  
+
   return (
     <li id="reservations">
       <img
@@ -99,7 +103,7 @@ function ReservedMovie({ movie, token, syncReservations }) {
       {movie.title}{" "}
       <div id="buttondiv">
         <button id="watchbutton" onClick={tryWatch}>
-          Watch
+          {movie.is_watched ? "Watched" : "Watch"}
         </button>
         <button id="deletebutton" onClick={returnMovie}>
           Delete
