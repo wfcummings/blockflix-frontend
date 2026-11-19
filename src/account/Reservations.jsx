@@ -102,7 +102,7 @@ function ReservedMovie({ movie, token, syncReservations }) {
       />
       {movie.title}{" "}
       <div id="buttondiv">
-        <button id="watchbutton" onClick={tryWatch}>
+        <button id="watchbutton" onClick={tryWatch} disabled={movie.is_watched ? true : false}>
           {movie.is_watched ? "Watched" : "Watch"}
         </button>
         <button id="deletebutton" onClick={returnMovie}>
