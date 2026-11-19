@@ -14,11 +14,7 @@ function MovieListItem({ movie }) {
   return (
     <li className="movie">
       <figure className="center-children">
-        <img
-          id="movieposter"
-          src={movie.poster}
-          alt={"Cover image of " + movie.title}
-        />
+        <img src={movie.poster} alt={"Cover image of " + movie.title} />
       </figure>
       <div>
         <h3>

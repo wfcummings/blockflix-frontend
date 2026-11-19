@@ -28,7 +28,7 @@ export default function MoviesPage() {
     <>
       {token && (
         <div className="movies-background">
-          <h1 id="moviespagetitle">Available Movies</h1>
+          <h1>Available Movies</h1>
           <MovieList movies={movies} syncMovies={syncMovies} />
         </div>
       )}
