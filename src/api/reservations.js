@@ -23,7 +23,7 @@ export async function createReservation(movieId, token) {
 
 // Get the user's reservations
 export async function getReservations(token) {
-  const response = await fetch(`${API}/reservations`, {
+  const response = await fetch(`${API}/movies/reservations`, {
     headers: { Authorization: `Bearer ${token}` },
   });
   if (!response.ok) {

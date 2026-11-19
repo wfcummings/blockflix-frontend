@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useAuth } from "../auth/AuthContext";
 import {
   getAccount,
-  getReservation,
   getReservations,
   watchMovie,
 } from "../api/movies";
@@ -74,8 +73,9 @@ function ReservedMovie({ movie, token, syncReservations }) {
   // try to add to the watch history table
   const tryWatch = async () => {
     try {
-      const res = await getReservation(token, movie.id);
-      await watchMovie(token, res.id);
+      /** Change the is_watched property in the reservations table */
+      await watchMovie(token, movie.id);
+      syncReservations(token);
     } catch (e) {
       setError(e.message);
     }
@@ -90,6 +90,9 @@ function ReservedMovie({ movie, token, syncReservations }) {
     }
   };
 
+  /** get the movies reservation */
+  
+
   return (
     <li id="reservations">
       <img
@@ -99,8 +102,8 @@ function ReservedMovie({ movie, token, syncReservations }) {
       />
       {movie.title}{" "}
       <div id="buttondiv">
-        <button id="watchbutton" onClick={tryWatch}>
-          Watch
+        <button id="watchbutton" onClick={tryWatch} disabled={movie.is_watched ? true : false}>
+          {movie.is_watched ? "Watched" : "Watch"}
         </button>
         <button id="deletebutton" onClick={returnMovie}>
           Delete
