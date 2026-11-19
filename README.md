@@ -1,10 +1,24 @@
-# Frontend Template
+# Blockflix 
 
-You can use this repository as a template for your frontend. It provides a very simple
-React Router layout with a navbar and an `AuthContext` with login and register pages.
+Blockflix is a movie reservation app we built for our capstone project. 
+Users can browse movies, 
+reserve a movie, 
+and view their watch history.
 
-## Usage
+## Main Pages 
 
-1. Change the name of the package in `package.json`.
-2. Update the environment variables in `example.env` and rename the file to `.env`.
-3. Build components and add routes to them in `App.jsx`.
+- Home
+- Register and Login
+- Movies
+- Movie Details
+- Account and Reservations 
+- Watch History
+
+![Blockflix Movies page](./blockflix-movies.png)
+
+## Tech Stack 
+
+- React for building the interface
+- React Router for navigating between pages
+- CSS for styling 
+- Vite for running and building the front end 

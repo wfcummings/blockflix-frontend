@@ -48,20 +48,6 @@
   outline: 0.125rem solid #163b65;
   outline-offset: 0.125rem;
 }
-/* Styles the form buttons */
-.register-page button {
-  padding: 0.57rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  background-color: #163b65;
-  color: white;
-  border: none;
-}
-/* Derkens the button on hover*/
-.register-page button:hover {
-  background-color: #102c4c;
-}
 
 /* Centers the login link and removes its underline */
 .register-page > a {
@@ -70,13 +56,9 @@
   text-align: center;
   text-decoration: none;
 }
-/* Add the cinema background to the register page */
+
 .register-background {
   min-height: 100vh;
-  background-image: url("/Cinema.PNG");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   padding: 2rem 1rem;
 }
 
@@ -101,6 +83,8 @@
   padding: 0.25rem;
   color: #163b65;
   font-size: 0.9rem;
+  cursor:pointer;
+  border-radius: 0.5rem;
 }
 /* keep the eye button background transparent on hover*/
 .register-page .password-toggle:hover {

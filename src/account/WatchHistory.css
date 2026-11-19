@@ -1,64 +1,55 @@
 /* Center the watch history card. */
 .watch-history {
-    width: calc(100% - 2rem);
-    max-width: 42.5rem;
-    box-sizing: border-box;
-    margin:0 auto;
-    padding :1.5rem;
-    background-color:#fff;
-    border: 0,0625rem solid #e3e9f1;
-    border-radius :1rem;
-    box-shadow:0,025rem 1rem rgb(31 53 82 / 8%);
+  width: calc(100% - 2rem);
+  max-width: 42.5rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: #fff;
+  border:
+    0,
+    0625rem solid #e3e9f1;
+  border-radius: 1rem;
+  box-shadow:
+    0,
+    025rem 1rem rgb(31 53 82 / 8%);
 }
 
 .watch-history-title {
-    margin: 0 0 1.25rem;
-    color: #263d5c;
-    
+  margin: 0 0 1.25rem;
+  color: #263d5c;
 }
 /* Give each mobie its own row.*/
-.watch-history-list{
-    display:grid;
-    gap:0.5rem;
-    list-style: none;
-    margin:0;
-    padding:0;
+.watch-history-list {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .watch-history-list li {
-    display: flex;
-    align-items:center;
-    gap:1rem;
-    padding : 0,75rem 1rem;
-    background-color:#f1f5fa;
-    border-radius: 0.5rem;
-    color:#263d5c;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding:
+    0,
+    75rem 1rem;
+  background-color: #f1f5fa;
+  border-radius: 0.5rem;
+  color: #263d5c;
 }
 
 .watch-history-list img {
-width: 6rem;
-aspect-ratio:16 /9;
-object-fit:cover;
-border-radius:0.5rem;
+  width: 6rem;
+  aspect-ratio: 16 /9;
+  object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 /* Style the link that opens the watch History */
 .watch-history-link {
-    display: block;
-    width:fit-content;
-    margin:0  auto;
-    padding : 0.65rem 1.25rem;
-    background-color: #395d89;
-    color:#fff;
-    border-radius:0.5rem;
-    font-weight:600;
-    text-decoration:none;
-}
-.watch-history-link:hover {
-    background-color: #263d5c;
-}
-
-.watch-history-bar,
-.watch-history-page{
-background-image: url("/Cinema.PNG");
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
