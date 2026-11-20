@@ -3,6 +3,18 @@ const API = import.meta.env.VITE_API;
 // Fetch the signed-in user's watch history .
 
 export async function getWatchHistory(token) {
+
+  const response = await fetch(API + "/movies/history", {
+    headers : { Authorization: `Bearer ${token}` }
+  });
+
+  if (!response) {
+    throw new Error("Failed to load history.")
+  } 
+
+  return await response.json();
+
+  /*
   const headers = { Authorization: `Bearer ${token}` };
 
   const response = await fetch(`${API}/movies/reservations`, { headers });
@@ -31,5 +43,5 @@ export async function getWatchHistory(token) {
     }),
   );
 
-  return watchedMovies.filter((movie) => movie !== null);
+  return watchedMovies.filter((movie) => movie !== null);*/
 }
