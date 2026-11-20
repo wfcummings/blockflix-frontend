@@ -11,7 +11,7 @@ export default function Navbar() {
         <NavLink id="brand" to="/movies">
           <img
             id="logosmall"
-            src="assets/BLOCKFLIX2.png"
+            src="/BLOCKFLIX2.png"
             alt="Logo for BlockFlix"
           ></img>
         </NavLink>
@@ -19,7 +19,7 @@ export default function Navbar() {
         <NavLink id="brand" to="/">
           <img
             id="logosmall"
-            src="assets/BLOCKFLIX2.png"
+            src="/BLOCKFLIX2.png"
             alt="Logo for BlockFlix"
           ></img>
         </NavLink>

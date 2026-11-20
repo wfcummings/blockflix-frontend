@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <div className="home">
-        <img src="assets/BLOCKFLIX2.png" alt="Logo for BlockFlix"></img>
+        <img src="/BLOCKFLIX2.png" alt="Logo for BlockFlix"></img>
         <NavLink id="signup" to="/register">
           Sign Up
         </NavLink>
