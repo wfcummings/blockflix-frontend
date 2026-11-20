@@ -50,7 +50,7 @@ export async function deleteReservation(token, id) {
   }
 
   const response = await fetch(API + "/reservations/" + id, {
-    method: "DELETE",
+    method: "PUT",
     headers: { Authorization: "Bearer " + token },
   });
 
