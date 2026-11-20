@@ -1,5 +1,5 @@
 /* Changes size of the main logo on homepage */
-#logo {
+.home img {
   width: 70%;
   height: 70%;
 }
@@ -11,7 +11,7 @@
 }
 
 /* Flex all home page content to center align them */
-#home {
+.home {
   display: flex;
   flex-direction: column;
   align-items: center;
