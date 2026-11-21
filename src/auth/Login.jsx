@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "./AuthContext";
 import "./Register.css";
-import "../buttons.css";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {

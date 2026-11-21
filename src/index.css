@@ -41,3 +41,26 @@ body {
   display: flex;
   gap: 1ch;
 }
+
+.button-base {
+  background-color: #19285a;
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button-base:hover:not(:disabled),
+.button-base:focus-visible {
+  background-color: #394688;
+}
+
+.button-base:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

@@ -3,7 +3,6 @@ import { useAuth } from "../auth/AuthContext";
 import { getAccount } from "../api/movies";
 import Reservations from "./Reservations";
 import { Link } from "react-router";
-import "../buttons.css";
 
 export default function Account() {
   const { token } = useAuth();
