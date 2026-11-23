@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "./AuthContext";
 import "./Register.css";
-import "../buttons.css";
+
 
 /** A form that allows users to register for a new account */
 export default function Register() {
@@ -26,7 +26,6 @@ export default function Register() {
   // Display the register page with a cinema background
   return (
     <div className="register-background">
-      {/* Registeration card  */}
       <div className="register-page">
         <h1>Register for an account</h1>
         <form action={onRegister}>
@@ -34,8 +33,6 @@ export default function Register() {
             Username
             <input type="text" name="username" />
           </label>
-
-          {/*  Password  field with a show/hide button   */}
           <label htmlFor="password">Password</label>
           <div className="password-field">
             <input

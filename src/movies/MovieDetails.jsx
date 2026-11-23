@@ -4,7 +4,6 @@ import { useAuth } from "../auth/AuthContext";
 import { getMovieById } from "../api/movies";
 import { createReservation,  getReservationsForMovie } from "../api/reservations";
 import "./MovieDetails.css";
-import "../buttons.css";
 
 
 export default function MovieDetails() {

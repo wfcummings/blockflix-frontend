@@ -30,7 +30,7 @@
   flex-direction: column;
   gap: 1rem;
 }
-/* {;aces ;abe; text above its input */
+/* places the label text above its input */
 .register-page label {
   display: flex;
   flex-direction: column;
